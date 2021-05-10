@@ -1,3 +1,5 @@
+#Code written by Majed Mouawad
+
 board = [
 
 [3,0,6,5,0,8,4,0,0],
