@@ -1,24 +1,28 @@
-#Code written by Majed Mouawad
+# Code written by Majed Mouawad
 
 board = [
 
-[3,0,6,5,0,8,4,0,0],
-[5,2,0,0,0,0,0,0,0],
-[0,8,7,0,0,0,0,3,1],
-[0,0,3,0,1,0,0,8,0],
-[9,0,0,8,6,3,0,0,5],
-[0,5,0,0,9,0,6,0,0],
-[1,3,0,0,0,0,2,5,0],
-[0,0,0,0,0,0,0,7,4],
-[0,0,5,2,0,6,3,0,0],
+        [0,2,0,0,0,0,0,0,0],
+        [0,0,0,6,0,0,0,0,3],
+        [0,7,4,0,8,0,0,0,0],
+        [0,0,0,0,0,3,0,0,2],
+        [0,8,0,0,4,0,0,1,0],
+        [6,0,0,5,0,0,0,0,0],
+        [0,0,0,0,1,0,7,8,0],
+        [5,0,0,0,0,9,0,0,0],
+        [0,0,0,0,0,0,0,4,0]
 
 ]
 
 
 def find_empty_sqaure(current_board):
 
-        # This function iterates over the board to find the first empty square
-        # and returns the coordinates of that sqaure.
+        """
+
+        This function iterates over the board to find the first empty square
+        and returns the coordinates of that sqaure.
+
+        """
 
         for i in range(len(current_board)):
                 for j in range(len(current_board[0])):
@@ -28,9 +32,13 @@ def find_empty_sqaure(current_board):
 
 
 def legal_placement(current_board, number_to_insert, position):
-        
-        # This function checks if the number_to_insert can be placed in the sqaure of 
-        # of coordinates position following the sudoku rules.
+
+        """
+
+        This function checks if the number_to_insert can be placed in the sqaure of 
+        of coordinates position following the sudoku rules.
+
+        """
 
         for i in range(len(current_board[1])):
                 if current_board[position[0]][i] == number_to_insert and position[1] != i:
@@ -57,7 +65,11 @@ def legal_placement(current_board, number_to_insert, position):
 
 def solve_board(current_board):
 
-        # This function solves the sudoku board using the backtracking algorithm.
+        """
+
+        This function solves the sudoku board using the backtracking algorithm.
+
+        """
 
         if find_empty_sqaure(current_board) == None:
                 return True
@@ -78,11 +90,15 @@ def solve_board(current_board):
 
 def display_board(current_board):
 
-        # This function prints out the board.
+        """
+
+        This function prints out the board.
         
+        """
+
         for i in range(len(current_board)):
                 if i % 3 == 0 and i != 0:
-                        print("- - - - - - - - - - - - - - - - - - -")
+                        print("- - - - - - - - - - - - ")
 
                 for j in range(len(current_board[1])):
                         if j % 3 == 0 and j != 0:
@@ -93,8 +109,3 @@ def display_board(current_board):
                         else:
                                 print(str(current_board[i][j]) + " ", end = "")
 
-
-display_board(board)
-solve_board(board)
-print("\n Here is the solved board: \n")
-display_board(board)
