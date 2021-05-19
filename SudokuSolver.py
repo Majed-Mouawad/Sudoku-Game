@@ -1,5 +1,6 @@
 # Code written by Majed Mouawad
 
+
 board = [
 
         [0,2,0,0,0,0,0,0,0],
