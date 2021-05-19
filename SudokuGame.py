@@ -1,4 +1,5 @@
-#Code written by Majed Mouawad 
+#Code written by Majed Mouawad
+
 
 from SudokuSolver import solve_board, legal_placement, display_board
 import pygame
